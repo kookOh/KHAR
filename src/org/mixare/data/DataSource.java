@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2010- Peer internet solutions
  * 
  * This file is part of mixare.
@@ -51,7 +51,7 @@ public class DataSource {
 
 	/** 기본 URL */
 
-	//TODO : search > tmap 으로변경할것 
+	//TODO : search > tmap 으로변경할것 //TODO : APIKEY 숨길것
 	private static final String DAUM_BASE_URL = "https://apis.daum.net/local/v1/search/category.json?apikey=1a3de4395e79f6c3704841434f6aa305&code=";
 	private static final String TMAP_URL = "https://apis.skplanetx.com/tmap/routes/pedestrian?version=1&appKey=aa5012bc-76cf-316c-b000-a5f0913cb56b&"
 			+"resCoordType=WGS84GEO&startName=stp&endName=enp&reqCoordType=WGS84GEO";
