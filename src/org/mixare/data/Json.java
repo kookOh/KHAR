@@ -94,9 +94,10 @@ public class Json extends DataHandler {
 		if(jo.has("feature"))
 		{
 			Log.i("json", " json get");
-			//JSONArray tmp2 = jo.getJSONArray("geometry");
-			
-			String tmp = jo.getString("coordinates");
+			JSONArray tmp1 = jo.getJSONArray("geometry");
+			JSONObject tmp2 = tmp1.getJSONObject(0);
+			//tmp2.getString("coordinates");
+			String tmp = tmp2.getString("coordinates");
 			StringTokenizer tokens = new StringTokenizer(tmp);
 			String lon = tokens.nextToken(",");
 			String lat = tokens.nextToken(",");

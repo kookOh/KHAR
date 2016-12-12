@@ -37,31 +37,34 @@ import android.widget.Toast;
  *
  */
 
-// µ¥ÀÌÅÍ ¼Ò½º¸¦ ½ÇÁúÀûÀ¸·Î ´Ù·ç´Â Å¬·¡½º
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù·ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 public class DataSource {
 	
-	// µ¥ÀÌÅÍ ¼Ò½º¿Í µ¥ÀÌÅÍ Æ÷¸ËÀº ºñ½ÁÇØ º¸ÀÌÁö¸¸ ÀüÇô ´Ù¸£´Ù.
-	// µ¥ÀÌÅÍ ¼Ò½º´Â µ¥ÀÌÅÍ°¡ ¾îµð¼­ ¿Ô´ÂÁö, µ¥ÀÌÅÍ Æ÷¸ËÀº ¾î¶² Çü½ÄÀ¸·Î Æ÷¸ËµÇ¾ú´ÂÁö¸¦ °¡¸£Å²´Ù.
-	// ÀÌ¿¡ ´ëÇÑ ÀÌÇØ´Â ¶È°°Àº µ¥ÀÌÅÍ Æ÷¸ËÀ¸·Î ¿©·¯°¡ÁöÀÇ µ¥ÀÌÅÍ ¼Ò½º¸¦ ½ÇÇèÇÏ´Âµ¥¿¡ ÇÊ¼öÀûÀÌ´Ù
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô´ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ËµÇ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½.
+	// ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø´ï¿½ ï¿½È°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´Âµï¿½ï¿½ï¿½ ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ì´ï¿½
 	
 	
-	// µ¥ÀÌÅÍ ¼Ò½º¿Í µ¥ÀÌÅÍ Æ÷¸ËÀÇ ¿­°ÅÇü º¯¼ö
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public enum DATASOURCE { CONVENIENCE, CAFE, BANK, PCCAFE, HOSPITAL, PHARMACY, HOTEL, SEARCH };
 	public enum DATAFORMAT { CONVENIENCE, CAFE, BANK, PCCAFE, HOSPITAL, PHARMACY, HOTEL, SEARCH };	
 
-	/** ±âº» URL */
+	/** ï¿½âº» URL */
 
-	//TODO : search > tmap À¸·Îº¯°æÇÒ°Í //TODO : APIKEY ¼û±æ°Í
-	// URL string ¼³Á¤
+	//TODO : search > tmap ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ï¿½Ò°ï¿½ //TODO : APIKEY ï¿½ï¿½ï¿½ï¿½ï¿½
+	// URL string ï¿½ï¿½ï¿½ï¿½
+	//https://apis.skplanetx.com/tmap/routes/pedestrian?version=1&appKey=aa5012bc-76cf-316c-b000-a5f0913cb56b&startX=126.9823439963945&startY=37.56461982743129&endX=126.98031634883303
+	//&endY=37.57007473965354&startName=st1&endName=en1&reqCoordType=WGS84GEO&resCoordType=WGS84GEO
 	private static final String DAUM_BASE_URL = "https://apis.daum.net/local/v1/search/category.json?apikey=1a3de4395e79f6c3704841434f6aa305&code=";
-	private static final String TMAP_URL = "https://apis.skplanetx.com/tmap/routes/pedestrian?version=1&appKey=aa5012bc-76cf-316c-b000-a5f0913cb56b&"
-			+"resCoordType=WGS84GEO&startName=stp&endName=enp&reqCoordType=WGS84GEO";
+	private static final String TMAP_URL = 
+			"https://apis.skplanetx.com/tmap/routes/pedestrian?version=1&appKey=aa5012bc-76cf-316c-b000-a5f0913cb56b"
+			+"&startName=st1&endName=en1&reqCoordType=WGS84GEO&resCoordType=WGS84GEO";
 	
-	// ÁÖÀÇÇÒ°Í! ¹æ´ëÇÑ ¾çÀÇ µ¥ÀÌÅÍ(MB´ÜÀ§ ÀÌ»ó)À» »êÃâÇÒ ¶§¿¡´Â, ÀÛÀº ¹Ý°æÀÌ³ª Æ¯Á¤ÇÑ Äõ¸®¸¸À» »ç¿ëÇØ¾ßÇÑ´Ù
-	/** URL ºÎºÐ ³¡ */
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ò°ï¿½! ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(MBï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½Ý°ï¿½ï¿½Ì³ï¿½ Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½Ñ´ï¿½
+	/** URL ï¿½Îºï¿½ ï¿½ï¿½ */
 	
 	
-	// ¾ÆÀÌÄÜµé. Æ®À§ÅÍ¿Í ¹öÁî 
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½. Æ®ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 	public static Bitmap cafeIcon;
 	public static Bitmap convenienceIcon;
 	public static Bitmap bankIcon;
@@ -71,12 +74,12 @@ public class DataSource {
 	public static Bitmap hotelIcon;
 	
 	
-	// ±âº» »ý¼ºÀÚ
+	// ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public DataSource() {
 		
 	}
 	
-	// ¸®¼Ò½º·ÎºÎÅÍ °¢ ¾ÆÀÌÄÜ »ý¼º
+	// ï¿½ï¿½ï¿½Ò½ï¿½ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static void createIcons(Resources res) {
 		cafeIcon=BitmapFactory.decodeResource(res, R.drawable.cafe);
 		convenienceIcon=BitmapFactory.decodeResource(res, R.drawable.convenience);
@@ -91,7 +94,7 @@ public class DataSource {
 
 	}
 	
-	// ¾ÆÀÌÄÜ ºñÆ®¸ÊÀÇ °ÔÅÍ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static Bitmap getBitmap(DATASOURCE ds) {
 		Bitmap bitmap=null;
 		switch (ds) {
@@ -107,11 +110,11 @@ public class DataSource {
 		return bitmap;
 	}
 	
-	// µ¥ÀÌÅÍ ¼Ò½º·ÎºÎÅÍ µ¥ÀÌÅÍ Æ÷¸ËÀ» ÃßÃâ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò½ï¿½ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static DATAFORMAT dataFormatFromDataSource(DATASOURCE ds) {
 		
 		DATAFORMAT ret = DATAFORMAT.CONVENIENCE;
-				// ¼Ò½º Çü½Ä¿¡ µû¶ó Æ÷¸ËÀ» ÇÒ´çÇÑ´Ù
+				// ï¿½Ò½ï¿½ ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ï¿½Ñ´ï¿½
 		switch (ds) {
 			case CONVENIENCE: ret=DATAFORMAT.CONVENIENCE; break;
 			case CAFE: ret=DATAFORMAT.CAFE; break;
@@ -122,16 +125,16 @@ public class DataSource {
 			case HOTEL: ret=DATAFORMAT.HOTEL; break;
 			case SEARCH: ret=DATAFORMAT.SEARCH; break;
 		}
-		return ret;	// Æ÷¸Ë ¸®ÅÏ
+		return ret;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	
-	// °¢ Á¤º¸µé·Î ¿Ï¼ºµÈ URL ¸®Äù½ºÆ®¸¦ »ý¼º
+	// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¼ï¿½ï¿½ï¿½ URL ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static String createRequestURL(DATASOURCE source, double lat, double lon, double alt, float radius,String locale, double slat, double slon) {
-		String ret="";	// °á°ú ½ºÆ®¸µ
+		String ret="";	// ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½
 		String plus = "&location="+lat+","+lon+"&radius="+700;
 		
-		// ¼Ò½º¿¡ µû¶ó ÁÖ¼Ò ÇÒ´ç. ¿ì¼± »ó¼ö·Î ¼³Á¤µÈ °ªµéÀ» ÇÒ´çÇÑ´Ù
+		// ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½Ò´ï¿½. ï¿½ì¼± ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ï¿½Ñ´ï¿½
 		switch(source) {
 			
 			case CONVENIENCE: 
@@ -149,13 +152,13 @@ public class DataSource {
 			case HOTEL:
 				ret = DAUM_BASE_URL + "AD5"+ plus;break;
 			case SEARCH: 
-				//TODO : T-map URL·Î º¯°æÇØ¾ßÇÔ 16.12.11
-				ret= TMAP_URL + "&startX=" + lat +"&startY="+ lon +"&endX="+slat +"&endY=" +slon;
-				Log.d("tmapurl", "tmap _ url ");	break;
+				//TODO : T-map URLï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ 16.12.11
+				ret= TMAP_URL + "&startX=" + lon +"&startY="+ lat +"&endX="+slon +"&endY=" +slat;
+				Log.d("tmapurl", ret);	break;
 				
 		}
 		
-		// ÆÄÀÏ·ÎºÎÅÍ ÀÐ´Â °ÍÀÌ ¾Æ´Ï¶ó¸é
+		// ï¿½ï¿½ï¿½Ï·Îºï¿½ï¿½ï¿½ ï¿½Ð´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ï¿½
 		if (!ret.startsWith("file://")) {			
 		//		ret+="&location=" + lat + "," + lon + "&radius=" + 700;			
 		}
@@ -165,7 +168,7 @@ public class DataSource {
 	}
 	
 	
-	// °¢ ¼Ò½º¿¡ µû¸¥ »öÀ» ¸®ÅÏ // ÀüºÎ´Ù default ¼³Á¤
+	// ï¿½ï¿½ ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ // ï¿½ï¿½ï¿½Î´ï¿½ default ï¿½ï¿½ï¿½ï¿½
 	public static int getColor(DATASOURCE datasource) {
 		int ret;
 		switch(datasource) {

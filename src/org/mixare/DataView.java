@@ -301,7 +301,8 @@ public class DataView {
 						isLauncherStarted = true; break;	
 					case 8:
 						requestData(mixContext.getStartUrl(),DATAFORMAT.SEARCH,DATASOURCE.SEARCH);
-						isLauncherStarted = true; break;
+						isLauncherStarted = true; 
+						Toast.makeText(mixContext, "data view default", Toast.LENGTH_SHORT).show(); break;
 					default :Toast.makeText(mixContext, "data view default", Toast.LENGTH_SHORT).show(); break;
 			//			if (!mixContext.isDataSourceSelected(DataSource.DATASOURCE.CAFE)) {
 			//			mixContext.toogleDataSource(DataSource.DATASOURCE.CAFE);

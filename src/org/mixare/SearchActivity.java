@@ -140,7 +140,7 @@ public class SearchActivity extends Activity implements OnClickListener, OnItemC
 			//한글일 경우 인코딩 필요!(영어로 가정한다)
 			buffer.append("&query="+encodedK);
 			//buffer.append("&location="+curFix.getLatitude() +","+curFix.getLongitude());
-			buffer.append("&location=37.236473125583046,127.02774128580387");
+			buffer.append("&location=37.23958813136382,127.08439079819328");
 			buffer.append("&radius=1000");
 			
 			

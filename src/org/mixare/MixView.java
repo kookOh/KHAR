@@ -192,7 +192,7 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 		if (!fError) {
 			fError = true;	// 에러 플래그를 true
 
-		//	setErrorDialog();	// 에러 다이얼로그 호출
+			setErrorDialog();	// 에러 다이얼로그 호출
 
 			ex1.printStackTrace();	// 에러 내용을 출력
 			try {
@@ -238,7 +238,9 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 					repaint();	// 리페인트 호출     		
 				}
 				catch(Exception ex){	// 실패시 에러 처리
-	//				doError(ex);
+					Toast.makeText(mixContext, "error6", Toast.LENGTH_SHORT).show();
+					doError(ex);
+				
 				}
 			}
 		});
@@ -379,7 +381,9 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 			}	
 			
 		} catch (Exception ex) {
+			Toast.makeText(mixContext, "error7", Toast.LENGTH_SHORT).show();
 			doError(ex);	// 예외 발생시 에러 처리
+			
 		}
 	}
 
@@ -470,7 +474,9 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 				finish();
 			}
 		} catch (Exception ex) {
+			Toast.makeText(mixContext, "error1", Toast.LENGTH_SHORT).show();
 			doError(ex);	// 예외 발생시 에러 처리
+			
 		}
 	}
 
@@ -610,6 +616,7 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 			downloadThread = new Thread(mixContext.downloadManager);
 			downloadThread.start();
 		} catch (Exception ex) {
+			Toast.makeText(mixContext, "error2", Toast.LENGTH_SHORT).show();
 			doError(ex);	// 에러 처리
 			
 			try {
@@ -868,8 +875,10 @@ public class MixView extends Activity implements SensorEventListener,LocationLis
 			return true;
 			
 		} catch (Exception ex) {	// 예외 처리
-			//doError(ex);
+			Toast.makeText(mixContext, "error3", Toast.LENGTH_SHORT).show();
+			doError(ex);
 			ex.printStackTrace();
+			
 			return super.onTouchEvent(me);
 		}
 	}
@@ -1164,8 +1173,11 @@ class AugmentedView extends View {
 
 			app.killOnError();	// 에러 여부를 체크
 		} catch (Exception ex) {
+			Toast.makeText(getContext(), "error4", Toast.LENGTH_SHORT).show();
 			app.doError(ex);
 		}
+		
+		
 	}
 
 	// 그려지는 부분
@@ -1196,11 +1208,13 @@ class AugmentedView extends View {
 			// 데이터 뷰가 초기화 되지 않았을 경우엔 초기화 처리
 			if (!MixView.dataView.isInited()) {
 				MixView.dataView.init(MixView.dWindow.getWidth(), MixView.dWindow.getHeight());
+
 			}
 			// 데이터 뷰의 데이터들을 윈도우에 그린다
 			MixView.dataView.draw(MixView.dWindow);
+
 		} catch (Exception ex) {
-			app.doError(ex);
+						app.doError(ex);
+			
 		}
-	}
-}
+	}}
