@@ -1,4 +1,4 @@
-ï»¿/*
+/*
  * Copyright (C) 2010- Peer internet solutions
  * 
  * This file is part of mixare.
@@ -37,30 +37,31 @@ import android.widget.Toast;
  *
  */
 
-// ë°ì´í„° ì†ŒìŠ¤ë¥¼ ì‹¤ì§ˆì ìœ¼ë¡œ ë‹¤ë£¨ëŠ” í´ë˜ìŠ¤
+// µ¥ÀÌÅÍ ¼Ò½º¸¦ ½ÇÁúÀûÀ¸·Î ´Ù·ç´Â Å¬·¡½º
 public class DataSource {
 	
-	// ë°ì´í„° ì†ŒìŠ¤ì™€ ë°ì´í„° í¬ë§·ì€ ë¹„ìŠ·í•´ ë³´ì´ì§€ë§Œ ì „í˜€ ë‹¤ë¥´ë‹¤.
-	// ë°ì´í„° ì†ŒìŠ¤ëŠ” ë°ì´í„°ê°€ ì–´ë””ì„œ ì™”ëŠ”ì§€, ë°ì´í„° í¬ë§·ì€ ì–´ë–¤ í˜•ì‹ìœ¼ë¡œ í¬ë§·ë˜ì—ˆëŠ”ì§€ë¥¼ ê°€ë¥´í‚¨ë‹¤.
-	// ì´ì— ëŒ€í•œ ì´í•´ëŠ” ë˜‘ê°™ì€ ë°ì´í„° í¬ë§·ìœ¼ë¡œ ì—¬ëŸ¬ê°€ì§€ì˜ ë°ì´í„° ì†ŒìŠ¤ë¥¼ ì‹¤í—˜í•˜ëŠ”ë°ì— í•„ìˆ˜ì ì´ë‹¤
+	// µ¥ÀÌÅÍ ¼Ò½º¿Í µ¥ÀÌÅÍ Æ÷¸ËÀº ºñ½ÁÇØ º¸ÀÌÁö¸¸ ÀüÇô ´Ù¸£´Ù.
+	// µ¥ÀÌÅÍ ¼Ò½º´Â µ¥ÀÌÅÍ°¡ ¾îµğ¼­ ¿Ô´ÂÁö, µ¥ÀÌÅÍ Æ÷¸ËÀº ¾î¶² Çü½ÄÀ¸·Î Æ÷¸ËµÇ¾ú´ÂÁö¸¦ °¡¸£Å²´Ù.
+	// ÀÌ¿¡ ´ëÇÑ ÀÌÇØ´Â ¶È°°Àº µ¥ÀÌÅÍ Æ÷¸ËÀ¸·Î ¿©·¯°¡ÁöÀÇ µ¥ÀÌÅÍ ¼Ò½º¸¦ ½ÇÇèÇÏ´Âµ¥¿¡ ÇÊ¼öÀûÀÌ´Ù
 	
 	
-	// ë°ì´í„° ì†ŒìŠ¤ì™€ ë°ì´í„° í¬ë§·ì˜ ì—´ê±°í˜• ë³€ìˆ˜
+	// µ¥ÀÌÅÍ ¼Ò½º¿Í µ¥ÀÌÅÍ Æ÷¸ËÀÇ ¿­°ÅÇü º¯¼ö
 	public enum DATASOURCE { CONVENIENCE, CAFE, BANK, PCCAFE, HOSPITAL, PHARMACY, HOTEL, SEARCH };
 	public enum DATAFORMAT { CONVENIENCE, CAFE, BANK, PCCAFE, HOSPITAL, PHARMACY, HOTEL, SEARCH };	
 
-	/** ê¸°ë³¸ URL */
+	/** ±âº» URL */
 
-	//TODO : search > tmap ìœ¼ë¡œë³€ê²½í• ê²ƒ //TODO : APIKEY ìˆ¨ê¸¸ê²ƒ
+	//TODO : search > tmap À¸·Îº¯°æÇÒ°Í //TODO : APIKEY ¼û±æ°Í
+	// URL string ¼³Á¤
 	private static final String DAUM_BASE_URL = "https://apis.daum.net/local/v1/search/category.json?apikey=1a3de4395e79f6c3704841434f6aa305&code=";
 	private static final String TMAP_URL = "https://apis.skplanetx.com/tmap/routes/pedestrian?version=1&appKey=aa5012bc-76cf-316c-b000-a5f0913cb56b&"
 			+"resCoordType=WGS84GEO&startName=stp&endName=enp&reqCoordType=WGS84GEO";
 	
-	// ì£¼ì˜í• ê²ƒ! ë°©ëŒ€í•œ ì–‘ì˜ ë°ì´í„°(MBë‹¨ìœ„ ì´ìƒ)ì„ ì‚°ì¶œí•  ë•Œì—ëŠ”, ì‘ì€ ë°˜ê²½ì´ë‚˜ íŠ¹ì •í•œ ì¿¼ë¦¬ë§Œì„ ì‚¬ìš©í•´ì•¼í•œë‹¤
-	/** URL ë¶€ë¶„ ë */
+	// ÁÖÀÇÇÒ°Í! ¹æ´ëÇÑ ¾çÀÇ µ¥ÀÌÅÍ(MB´ÜÀ§ ÀÌ»ó)À» »êÃâÇÒ ¶§¿¡´Â, ÀÛÀº ¹İ°æÀÌ³ª Æ¯Á¤ÇÑ Äõ¸®¸¸À» »ç¿ëÇØ¾ßÇÑ´Ù
+	/** URL ºÎºĞ ³¡ */
 	
 	
-	// ì•„ì´ì½˜ë“¤. íŠ¸ìœ„í„°ì™€ ë²„ì¦ˆ 
+	// ¾ÆÀÌÄÜµé. Æ®À§ÅÍ¿Í ¹öÁî 
 	public static Bitmap cafeIcon;
 	public static Bitmap convenienceIcon;
 	public static Bitmap bankIcon;
@@ -70,12 +71,12 @@ public class DataSource {
 	public static Bitmap hotelIcon;
 	
 	
-	// ê¸°ë³¸ ìƒì„±ì
+	// ±âº» »ı¼ºÀÚ
 	public DataSource() {
 		
 	}
 	
-	// ë¦¬ì†ŒìŠ¤ë¡œë¶€í„° ê° ì•„ì´ì½˜ ìƒì„±
+	// ¸®¼Ò½º·ÎºÎÅÍ °¢ ¾ÆÀÌÄÜ »ı¼º
 	public static void createIcons(Resources res) {
 		cafeIcon=BitmapFactory.decodeResource(res, R.drawable.cafe);
 		convenienceIcon=BitmapFactory.decodeResource(res, R.drawable.convenience);
@@ -90,7 +91,7 @@ public class DataSource {
 
 	}
 	
-	// ì•„ì´ì½˜ ë¹„íŠ¸ë§µì˜ ê²Œí„°
+	// ¾ÆÀÌÄÜ ºñÆ®¸ÊÀÇ °ÔÅÍ
 	public static Bitmap getBitmap(DATASOURCE ds) {
 		Bitmap bitmap=null;
 		switch (ds) {
@@ -106,11 +107,11 @@ public class DataSource {
 		return bitmap;
 	}
 	
-	// ë°ì´í„° ì†ŒìŠ¤ë¡œë¶€í„° ë°ì´í„° í¬ë§·ì„ ì¶”ì¶œ
+	// µ¥ÀÌÅÍ ¼Ò½º·ÎºÎÅÍ µ¥ÀÌÅÍ Æ÷¸ËÀ» ÃßÃâ
 	public static DATAFORMAT dataFormatFromDataSource(DATASOURCE ds) {
 		
 		DATAFORMAT ret = DATAFORMAT.CONVENIENCE;
-				// ì†ŒìŠ¤ í˜•ì‹ì— ë”°ë¼ í¬ë§·ì„ í• ë‹¹í•œë‹¤
+				// ¼Ò½º Çü½Ä¿¡ µû¶ó Æ÷¸ËÀ» ÇÒ´çÇÑ´Ù
 		switch (ds) {
 			case CONVENIENCE: ret=DATAFORMAT.CONVENIENCE; break;
 			case CAFE: ret=DATAFORMAT.CAFE; break;
@@ -121,16 +122,16 @@ public class DataSource {
 			case HOTEL: ret=DATAFORMAT.HOTEL; break;
 			case SEARCH: ret=DATAFORMAT.SEARCH; break;
 		}
-		return ret;	// í¬ë§· ë¦¬í„´
+		return ret;	// Æ÷¸Ë ¸®ÅÏ
 	}
 	
 	
-	// ê° ì •ë³´ë“¤ë¡œ ì™„ì„±ëœ URL ë¦¬í€˜ìŠ¤íŠ¸ë¥¼ ìƒì„±
+	// °¢ Á¤º¸µé·Î ¿Ï¼ºµÈ URL ¸®Äù½ºÆ®¸¦ »ı¼º
 	public static String createRequestURL(DATASOURCE source, double lat, double lon, double alt, float radius,String locale, double slat, double slon) {
-		String ret="";	// ê²°ê³¼ ìŠ¤íŠ¸ë§
+		String ret="";	// °á°ú ½ºÆ®¸µ
 		String plus = "&location="+lat+","+lon+"&radius="+700;
 		
-		// ì†ŒìŠ¤ì— ë”°ë¼ ì£¼ì†Œ í• ë‹¹. ìš°ì„  ìƒìˆ˜ë¡œ ì„¤ì •ëœ ê°’ë“¤ì„ í• ë‹¹í•œë‹¤
+		// ¼Ò½º¿¡ µû¶ó ÁÖ¼Ò ÇÒ´ç. ¿ì¼± »ó¼ö·Î ¼³Á¤µÈ °ªµéÀ» ÇÒ´çÇÑ´Ù
 		switch(source) {
 			
 			case CONVENIENCE: 
@@ -148,13 +149,13 @@ public class DataSource {
 			case HOTEL:
 				ret = DAUM_BASE_URL + "AD5"+ plus;break;
 			case SEARCH: 
-				//TODO : T-map URLë¡œ ë³€ê²½í•´ì•¼í•¨ 16.12.11
+				//TODO : T-map URL·Î º¯°æÇØ¾ßÇÔ 16.12.11
 				ret= TMAP_URL + "&startX=" + lat +"&startY="+ lon +"&endX="+slat +"&endY=" +slon;
 				Log.d("tmapurl", "tmap _ url ");	break;
 				
 		}
 		
-		// íŒŒì¼ë¡œë¶€í„° ì½ëŠ” ê²ƒì´ ì•„ë‹ˆë¼ë©´
+		// ÆÄÀÏ·ÎºÎÅÍ ÀĞ´Â °ÍÀÌ ¾Æ´Ï¶ó¸é
 		if (!ret.startsWith("file://")) {			
 		//		ret+="&location=" + lat + "," + lon + "&radius=" + 700;			
 		}
@@ -164,7 +165,7 @@ public class DataSource {
 	}
 	
 	
-	// ê° ì†ŒìŠ¤ì— ë”°ë¥¸ ìƒ‰ì„ ë¦¬í„´ // ì „ë¶€ë‹¤ default ì„¤ì •
+	// °¢ ¼Ò½º¿¡ µû¸¥ »öÀ» ¸®ÅÏ // ÀüºÎ´Ù default ¼³Á¤
 	public static int getColor(DATASOURCE datasource) {
 		int ret;
 		switch(datasource) {
